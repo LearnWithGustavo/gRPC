@@ -1,11 +1,13 @@
-syntax = "proto3";
+//Arquivo proto que define a estrura de classe a ser usada no gRPC
 
-package veiculo;
+syntax = "proto3"; //Versão do proto
+
+package veiculo; //Nome do pacote
 
 option java_multiple_files = true;
 option java_package = "dev.gu_roodri.veiculo";
 
-//Definindo um serviço chamado ConsultarVeiculo
+//Definindo um serviço chamado ConsultarVeiculo, a ser usado
 service VeiculoService{
   rpc ConsultarVeiculo (VeiculoRequest) returns (VeiculoResponse);
 }
@@ -23,6 +25,3 @@ message VeiculoResponse{
   int32 ano = 4;
   bool disponivel = 5;
 }
-
-//LEMBRANDO QUE ESSES VALORES NA FRENTE DE CADA ATRIBUTO DO message NÃO É VALOR,
-// É A REFERENTE PARA QUANDO FOR REALIZADO UM DEPARA
