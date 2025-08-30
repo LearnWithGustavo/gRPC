@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package veiculo;
+
+option java_multiple_files = true;
+option java_package = "dev.gu_roodri.veiculo";
+
+//Definindo um serviço chamado ConsultarVeiculo
+service VeiculoService{
+  rpc ConsultarVeiculo (VeiculoRequest) returns (VeiculoResponse);
+}
+
+//Atributos de VeiculoRequest
+message VeiculoRequest{
+  string placa = 1;
+}
+
+//Atributos de VeiculoResponse
+message VeiculoResponse{
+  string placa = 1;
+  string modelo = 2;
+  string marca = 3;
+  int32 ano = 4;
+  bool disponivel = 5;
+}
+
+//LEMBRANDO QUE ESSES VALORES NA FRENTE DE CADA ATRIBUTO DO message NÃO É VALOR,
+// É A REFERENTE PARA QUANDO FOR REALIZADO UM DEPARA
